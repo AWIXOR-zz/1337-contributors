@@ -1,54 +1,48 @@
-<p align="center">
-  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby minimal TypeScript starter
-</h1>
+# 1337 Git workshop
 
-## 🚀 Quick start
+# ⚡ How to contribute ⚡
 
-1.  **Create a Gatsby site.**
+1. Fork this repo, read [how to fork repo](https://help.github.com/articles/fork-a-repo/)
+2. Clone the project to your local machine
+3. Install all dependencies :
+> - `npm install` or `yarn`
 
-    Use the Gatsby CLI to create a new site, specifying the minimal TypeScript starter.
+4. Create branch with your intra name, ex: `eaouassa`.
+   > ❗ **Never use the `master` branch to create PR** ❗
 
-    ```shell
-    # create a new Gatsby site using the minimal TypeScript starter
-    npm init gatsby
-    ```
+```sh
+git checkout -b <branch-name>
+# <branch-name> : ex eaouassa
+```
 
-2.  **Start developing.**
+5. Add a file with your name `intraName.yml` (ex: `eaouassa.yml`) to the `./contributors/` directory in your branch.
+6. Add code with your infos like this:
+```yml
+firstName: EL HOUCINE
+lastName: AOUASSAR
+bio: Front end Web Developer
+github: awixor
+```
 
-    Navigate into your new site’s directory and start it up.
+7. Check you change in your local machine
 
-    ```shell
-    cd my-gatsby-site/
-    npm run develop
-    ```
+- `yarn start` or `npm run start`
+- Your site is now running at `http://localhost:8000`!
+- Check the site and Make sure your name and profile avatar is on the list.
 
-3.  **Open the code and start customizing!**
+8. Commit changes and push
 
-    Your site is now running at http://localhost:8000!
+```sh
+git add <path-to-the-yaml-file>
 
-    Edit `src/pages/index.tsx` to see your site update in real-time!
+#Now commit those changes using the git commit command:
+git commit -m "Add <your-name> to Contributors list"
+#replacing <your-name> with your name.
 
-4.  **Learn more**
+#push
 
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
+git push origin <branch-name>
 
-    - [Tutorials](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
+```
 
-    - [Guides](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-
-## 🚀 Quick start (Gatsby Cloud)
-
-Deploy this starter with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cloud/):
-
-[<img src="https://www.gatsbyjs.com/deploynow.svg" alt="Deploy to Gatsby Cloud">](https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/gatsbyjs/gatsby-starter-minimal-ts)
+9. Create Pull-Request to `master` branch in this repository, read [how creating PR](https://help.github.com/articles/creating-a-pull-request/)
