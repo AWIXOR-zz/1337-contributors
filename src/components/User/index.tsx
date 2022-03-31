@@ -22,6 +22,8 @@ const AvatarStyles: any = {
   maxWidth: `300px`,
   minWidth: "260px",
   margin: "auto",
+  display: "flex",
+  justifyContent: "center",
 };
 
 const userNameStyles: any = {
@@ -29,8 +31,8 @@ const userNameStyles: any = {
   position: "absolute",
   minWidth: 120,
   bottom: 0,
-  left: "35%",
-  fontSize: 20,
+  left: "38%",
+  fontSize: 19,
   fontWeight: "bold",
   padding: "5px  10px",
   background: `linear-gradient(90deg, #ea472c 0%, rgba(234,71,44,1) 53%, rgba(234,71,44,0.8130602582830007) 100%)`,
@@ -41,11 +43,16 @@ const userNameStyles: any = {
   transform: `rotate(-4deg)`,
   color: "#FFF",
 };
+const imgStyle: any = {
+  borderRadius: "50%",
+  border: "3px #e3462b solid",
+};
 
 const bioStyles: any = {
-  fontSize: 14,
+  fontSize: 15,
   textAlign: "center",
-  color: "#FFF",
+  color: "#ffffff",
+  fontWeight: "bold",
   padding: "0px 20px",
 };
 
@@ -53,7 +60,15 @@ const User: FC<Props> = ({ firstName, lastName, github, bio, index }) => (
   <div style={ContainerStyles}>
     <a href={`https://github.com/${github}`} target="_blank">
       <div style={AvatarStyles}>
-        <Avatar github={github} index={index} />
+        {/* <Avatar github={github} index={index} /> */}
+        <img
+          style={imgStyle}
+          // transform="translate(-.01) scale(.00106)"
+          width="260"
+          height="255"
+          src={`https://github.com/${github}.png?size=${400 + index}`}
+        ></img>
+
         <p style={userNameStyles}>
           {firstName} <br /> {lastName}
         </p>
