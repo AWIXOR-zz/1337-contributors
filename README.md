@@ -5,7 +5,7 @@
 1. Fork this repo, read [how to fork repo](https://help.github.com/articles/fork-a-repo/)
 2. Clone the project to your local machine
 3. Install all dependencies :
-> - `npm install` or `yarn`
+   - `npm install` or `yarn`
 
 4. Create branch with your intra name, ex: `eaouassa`.
    > ❗ **Never use the `master` branch to create PR** ❗
