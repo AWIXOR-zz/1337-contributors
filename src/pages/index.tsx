@@ -4,15 +4,11 @@ import Layout from "../components/Layout";
 import { hot } from 'react-hot-loader';
 import logo from '@assets/logo.svg';
 import Student from "../Student";
+let users = requireAll(require.context('../../contributors/', false, /\.yml$/));
 
-let users:Student[] = [
-  {
-    firstName: "ismail",
-    lastName: "ait bella",
-    bio: "Js is literaly hitler",
-    github: "abellaismail7"
-  }
-]
+function requireAll(r:any): Student[] { 
+  return r.keys().map((element:string) => r(element));
+} 
 
 const headerStyles = {
   maxWidth: `450px`,
