@@ -1,5 +1,4 @@
 import React, { FC } from "react";
-import { Avatar } from "../../assets/Icons/Avatar";
 
 type Props = {
   firstName: string;
