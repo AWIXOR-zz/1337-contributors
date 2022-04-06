@@ -1,8 +1,14 @@
 import * as React from "react";
-import { StaticQuery, graphql } from "gatsby";
 import User from "../components/User";
 import Layout from "../components/Layout";
-import { Logo } from "../assets/Icons/Logo";
+import { hot } from 'react-hot-loader';
+import logo from '@assets/logo.svg';
+import Student from "../Student";
+let users = requireAll(require.context('../../contributors/', false, /\.yml$/));
+
+function requireAll(r:any): Student[] { 
+  return r.keys().map((element:string) => r(element));
+} 
 
 const headerStyles = {
   maxWidth: `450px`,
@@ -25,7 +31,7 @@ const IndexPage: React.FC = () => {
   return (
     <Layout>
       <div style={headerStyles}>
-        <Logo color="white" />
+          <img src={logo} title='1337 Contributors' />
       </div>
       <div style={{ display: "flex", justifyContent: "center" }}>
         <h1 style={titleStyles}>Our Contributors</h1>
@@ -35,29 +41,13 @@ const IndexPage: React.FC = () => {
   );
 };
 
-const Contributors = () => (
-  <StaticQuery
-    query={graphql`
-      {
-        allContributorsYaml {
-          edges {
-            node {
-              bio
-              github
-              firstName
-              lastName
-            }
-          }
-        }
-      }
-    `}
-    render={(data) => (
+const Contributors = () => {
+    return (
       <div style={{ display: "flex", flexWrap: "wrap" }}>
-        {data.allContributorsYaml.edges.map(({ node }: any, i: number) => (
+        {users.map((node: any, i: number) => (
           <User {...node} key={i} index={i} />
         ))}
       </div>
-    )}
-  ></StaticQuery>
-);
-export default IndexPage;
+    )
+};
+export default hot(module)(IndexPage);
