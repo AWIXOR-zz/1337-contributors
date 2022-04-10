@@ -22,8 +22,10 @@ module.exports = {
   devtool: 'cheap-module-source-map',
   devServer: {
     open: true,
-    stats: 'errors-warnings',
     hot: true,
+    devMiddleware: {
+      stats: "errors-warnings",
+    },
   },
   optimization: {
     splitChunks: {
